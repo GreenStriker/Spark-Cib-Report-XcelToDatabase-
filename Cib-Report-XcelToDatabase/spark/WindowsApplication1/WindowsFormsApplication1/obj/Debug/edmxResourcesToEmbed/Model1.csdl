@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CIBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CIBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Com_i" EntityType="CIBModel.Com_i" />
+    <EntitySet Name="D_Contract_History" EntityType="CIBModel.D_Contract_History" />
+    <EntitySet Name="d_Other_sub_linked" EntityType="CIBModel.d_Other_sub_linked" />
+    <EntitySet Name="DETAILS_OF_INSTALL_Faca" EntityType="CIBModel.DETAILS_OF_INSTALL_Faca" />
+    <EntitySet Name="Flags" EntityType="CIBModel.Flag" />
+    <EntitySet Name="I_ADDRESS" EntityType="CIBModel.I_ADDRESS" />
+    <EntitySet Name="I_INQUIRED" EntityType="CIBModel.I_INQUIRED" />
+    <EntitySet Name="IMasters" EntityType="CIBModel.IMaster" />
+    <EntitySet Name="owner_list" EntityType="CIBModel.owner_list" />
+    <EntitySet Name="PROP_CONCERN" EntityType="CIBModel.PROP_CONCERN" />
+    <EntitySet Name="REQUESTED_CONTRACT" EntityType="CIBModel.REQUESTED_CONTRACT" />
+    <EntitySet Name="Sub__INFO" EntityType="CIBModel.Sub__INFO" />
+    <EntitySet Name="SUM_OF_FACILITY_S_AS_BOR" EntityType="CIBModel.SUM_OF_FACILITY_S_AS_BOR" />
+    <EntitySet Name="SUM_OF_FUNDED_FACILI_AS_BOR" EntityType="CIBModel.SUM_OF_FUNDED_FACILI_AS_BOR" />
+    <EntitySet Name="SUM_OF_NON_FUNDED_FACILI_AS_BOR" EntityType="CIBModel.SUM_OF_NON_FUNDED_FACILI_AS_BOR" />
+    <EntitySet Name="sysdiagrams" EntityType="CIBModel.sysdiagram" />
+    <AssociationSet Name="FK_I_Sub__INFO_I_Sub__INFO" Association="CIBModel.FK_I_Sub__INFO_I_Sub__INFO">
+      <End Role="Sub__INFO" EntitySet="Sub__INFO" />
+      <End Role="Sub__INFO1" EntitySet="Sub__INFO" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Com_i">
+    <Key>
+      <PropertyRef Name="com_id" />
+    </Key>
+    <Property Name="com_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cib_s_c" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="name_of_owner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="fi" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="legal" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+    <Property Name="stay_order" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="D_Contract_History">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Outstanding" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Overdue" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NPI" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Defa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="D_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="d_Other_sub_linked">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIB_s_c" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="D_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DETAILS_OF_INSTALL_Faca">
+    <Key>
+      <PropertyRef Name="D_id" />
+    </Key>
+    <Property Name="D_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ref" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FI_code" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_code" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CIB_contract_code" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="FI_contract_code" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Phase" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Facility" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Starting_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="End_date_of_contract" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Sanction_Limit" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Disbursement_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Total_number_of_installments" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Installment_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Remaining_installments_Number" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Security_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Third_Party_guarantee_Amount" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Security_Type" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Date_of_Last_Update" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Date_of_Law_suit" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Date_of_Last_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_of_classification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_of_last_rescheduling" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Method_of_payment" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Payments_periodicity" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Number_of_time_rescheduled" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Remaining_installments_Amount" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Reorganized_credit" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Basis_for_classification_qualitative_judgment" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Flag">
+    <Key>
+      <PropertyRef Name="flag_id" />
+    </Key>
+    <Property Name="flag_id" Type="Int32" Nullable="false" />
+    <Property Name="table_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="frist_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="frist_flag" Type="Int32" />
+    <Property Name="second_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="second_flag" Type="Int32" />
+    <Property Name="third_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="third_flag" Type="Int32" />
+  </EntityType>
+  <EntityType Name="I_ADDRESS">
+    <Key>
+      <PropertyRef Name="Address_id" />
+    </Key>
+    <Property Name="Address_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Address_Type" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Postal_code" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="flag" Type="Int32" />
+    <Property Name="cib_bb_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="I_INQUIRED">
+    <Key>
+      <PropertyRef Name="Inque_id" />
+    </Key>
+    <Property Name="Inque_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Trade_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Proprietorship_District" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Proprietorship_Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Owner_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Father_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Mother_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proprietorship_Postalcode" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NID" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Owner_Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Postcode" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="District" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TIN" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="IMaster">
+    <Key>
+      <PropertyRef Name="cib_bb_id" />
+    </Key>
+    <Property Name="cib_bb_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIB_subject_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_of_Inquiry" Type="DateTime" Precision="3" />
+    <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FI_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FI_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="file_location" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Upload_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="owner_list">
+    <Key>
+      <PropertyRef Name="ow_id" />
+    </Key>
+    <Property Name="ow_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cib_sub" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Name_owner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="stay_order" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PROP_CONCERN">
+    <Key>
+      <PropertyRef Name="linked_id" />
+    </Key>
+    <Property Name="linked_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIb_sub_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sector_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sector_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ref_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Trade_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Tele_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="REQUESTED_CONTRACT">
+    <Key>
+      <PropertyRef Name="Req_id" />
+    </Key>
+    <Property Name="Req_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SL" Type="Int32" />
+    <Property Name="Type_of_Contract" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Facility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FI_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Branch_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Request_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total_Requested_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CIB_subject_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CIB_contract_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FI_0contract_codede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sub__INFO">
+    <Key>
+      <PropertyRef Name="Sub_id" />
+    </Key>
+    <Property Name="Sub_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIB_subject_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Fathername" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SpouseName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Mothername" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Dob" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="District_Country" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TIN" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Type_of_sub" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Ref_number" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Sector_type" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_type" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_number" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_issue_date" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_issue_country" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="cib_bb_id" Type="Int32" />
+    <Property Name="trade_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="sector_code" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="legal_form" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="reg_num" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="reg_date" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sub__INFO1" Relationship="CIBModel.FK_I_Sub__INFO_I_Sub__INFO" FromRole="Sub__INFO" ToRole="Sub__INFO1" />
+    <NavigationProperty Name="Sub__INFO2" Relationship="CIBModel.FK_I_Sub__INFO_I_Sub__INFO" FromRole="Sub__INFO1" ToRole="Sub__INFO" />
+  </EntityType>
+  <EntityType Name="SUM_OF_FACILITY_S_AS_BOR">
+    <Key>
+      <PropertyRef Name="Bor_id" />
+    </Key>
+    <Property Name="Bor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="No_of_reporting_Institutes" Type="Int32" />
+    <Property Name="No_of_Living_Contracts" Type="Int32" />
+    <Property Name="Total_Outstanding_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Total_Overdue_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="No_of_Stay_order_contracts" Type="Int32" />
+    <Property Name="Total_Outstanding_amount_for_Stay" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cib_bb_id" Type="Int32" />
+    <Property Name="flag" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SUM_OF_FUNDED_FACILI_AS_BOR">
+    <Key>
+      <PropertyRef Name="co_id" />
+    </Key>
+    <Property Name="co_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Contract_Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UC_NO" Type="Int32" />
+    <Property Name="SMA_NO" Type="Int32" />
+    <Property Name="SS_NO" Type="Int32" />
+    <Property Name="DF_NO" Type="Int32" />
+    <Property Name="B_NO" Type="Int32" />
+    <Property Name="BLW_NO" Type="Int32" />
+    <Property Name="Terminated_NO" Type="Int32" />
+    <Property Name="Requested_NO" Type="Int32" />
+    <Property Name="Stay_Order_NO" Type="Int32" />
+    <Property Name="UC_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SMA_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SS_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DF_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BL_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BLW_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Terminated_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Requested_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Stay_Order_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cib_bb_id" Type="Int32" Nullable="false" />
+    <Property Name="flag" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SUM_OF_NON_FUNDED_FACILI_AS_BOR">
+    <Key>
+      <PropertyRef Name="Bor_id" />
+    </Key>
+    <Property Name="Bor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type_of_Financing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Living_NO" Type="Int32" />
+    <Property Name="Terminated_NO" Type="Int32" />
+    <Property Name="Requested_NO" Type="Int32" />
+    <Property Name="Stay_Order_NO" Type="Int32" />
+    <Property Name="Living_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Terminated_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Requested_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Stay_Order_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cib_bb_id" Type="Int32" Nullable="false" />
+    <Property Name="flag" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_I_Sub__INFO_I_Sub__INFO">
+    <End Type="CIBModel.Sub__INFO" Role="Sub__INFO" Multiplicity="1" />
+    <End Type="CIBModel.Sub__INFO" Role="Sub__INFO1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Sub__INFO">
+        <PropertyRef Name="Sub_id" />
+      </Principal>
+      <Dependent Role="Sub__INFO1">
+        <PropertyRef Name="Sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8bc64f9183348f8b6cb071bd59a47ec" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="CIBModel.Com_i" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIBModel.D_Contract_History" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIBModel.d_Other_sub_linked" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CIBModel.DETAILS_OF_INSTALL_Faca" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CIBModel.Flag" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIBModel.I_ADDRESS" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CIBModel.I_INQUIRED" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIBModel.IMaster" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CIBModel.owner_list" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="CIBModel.PROP_CONCERN" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CIBModel.REQUESTED_CONTRACT" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="CIBModel.Sub__INFO" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIBModel.SUM_OF_FACILITY_S_AS_BOR" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CIBModel.SUM_OF_FUNDED_FACILI_AS_BOR" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CIBModel.SUM_OF_NON_FUNDED_FACILI_AS_BOR" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="CIBModel.sysdiagram" Width="1.5" PointX="12.75" PointY="0.75" />
+        <AssociationConnector Association="CIBModel.FK_I_Sub__INFO_I_Sub__INFO" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

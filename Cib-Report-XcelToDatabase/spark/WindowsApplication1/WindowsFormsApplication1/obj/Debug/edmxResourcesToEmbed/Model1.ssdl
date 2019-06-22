@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CIBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Com_i">
+    <Key>
+      <PropertyRef Name="com_id" />
+    </Key>
+    <Property Name="com_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cib_s_c" Type="varchar" MaxLength="150" />
+    <Property Name="name_of_owner" Type="varchar" MaxLength="150" />
+    <Property Name="role" Type="varchar" MaxLength="150" />
+    <Property Name="fi" Type="varchar" MaxLength="150" />
+    <Property Name="legal" Type="varchar" MaxLength="150" />
+    <Property Name="cib_bb_id" Type="int" />
+    <Property Name="stay_order" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="D_Contract_History">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="varchar" MaxLength="150" />
+    <Property Name="Outstanding" Type="varchar" MaxLength="150" />
+    <Property Name="Overdue" Type="varchar" MaxLength="150" />
+    <Property Name="NPI" Type="varchar" MaxLength="150" />
+    <Property Name="Status" Type="varchar" MaxLength="150" />
+    <Property Name="Defa" Type="varchar" MaxLength="150" />
+    <Property Name="D_id" Type="int" />
+  </EntityType>
+  <EntityType Name="d_Other_sub_linked">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CIB_s_c" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="D_id" Type="int" />
+  </EntityType>
+  <EntityType Name="DETAILS_OF_INSTALL_Faca">
+    <Key>
+      <PropertyRef Name="D_id" />
+    </Key>
+    <Property Name="D_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ref" Type="varchar" MaxLength="50" />
+    <Property Name="FI_code" Type="varchar" MaxLength="150" />
+    <Property Name="Branch_code" Type="varchar" MaxLength="150" />
+    <Property Name="CIB_contract_code" Type="varchar" MaxLength="150" />
+    <Property Name="FI_contract_code" Type="varchar" MaxLength="150" />
+    <Property Name="Role" Type="varchar" MaxLength="150" />
+    <Property Name="Phase" Type="varchar" MaxLength="150" />
+    <Property Name="Facility" Type="varchar" MaxLength="150" />
+    <Property Name="Starting_date" Type="varchar" MaxLength="50" />
+    <Property Name="End_date_of_contract" Type="varchar" MaxLength="150" />
+    <Property Name="Sanction_Limit" Type="varchar" MaxLength="150" />
+    <Property Name="Total_Disbursement_Amount" Type="money" />
+    <Property Name="Total_number_of_installments" Type="varchar" MaxLength="150" />
+    <Property Name="Installment_Amount" Type="money" />
+    <Property Name="Remaining_installments_Number" Type="varchar" MaxLength="150" />
+    <Property Name="Security_Amount" Type="money" />
+    <Property Name="Third_Party_guarantee_Amount" Type="varchar" MaxLength="150" />
+    <Property Name="Security_Type" Type="varchar" MaxLength="150" />
+    <Property Name="Date_of_Last_Update" Type="varchar" MaxLength="150" />
+    <Property Name="Date_of_Law_suit" Type="varchar" MaxLength="150" />
+    <Property Name="Date_of_Last_payment" Type="varchar" MaxLength="50" />
+    <Property Name="Date_of_classification" Type="varchar" MaxLength="50" />
+    <Property Name="Date_of_last_rescheduling" Type="varchar" MaxLength="50" />
+    <Property Name="Method_of_payment" Type="varchar" MaxLength="150" />
+    <Property Name="Payments_periodicity" Type="varchar" MaxLength="150" />
+    <Property Name="Number_of_time_rescheduled" Type="varchar" MaxLength="150" />
+    <Property Name="Remaining_installments_Amount" Type="varchar" MaxLength="150" />
+    <Property Name="Reorganized_credit" Type="varchar" MaxLength="150" />
+    <Property Name="Basis_for_classification_qualitative_judgment" Type="varchar" MaxLength="150" />
+    <Property Name="Remarks" Type="varchar" MaxLength="500" />
+    <Property Name="cib_bb_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Flags">
+    <Key>
+      <PropertyRef Name="flag_id" />
+    </Key>
+    <Property Name="flag_id" Type="int" Nullable="false" />
+    <Property Name="table_name" Type="varchar" MaxLength="50" />
+    <Property Name="frist_name" Type="varchar" MaxLength="50" />
+    <Property Name="frist_flag" Type="int" />
+    <Property Name="second_name" Type="varchar" MaxLength="50" />
+    <Property Name="second_flag" Type="int" />
+    <Property Name="third_name" Type="varchar" MaxLength="50" />
+    <Property Name="third_flag" Type="int" />
+  </EntityType>
+  <EntityType Name="I_ADDRESS">
+    <Key>
+      <PropertyRef Name="Address_id" />
+    </Key>
+    <Property Name="Address_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address_Type" Type="varchar" MaxLength="150" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="Postal_code" Type="varchar" MaxLength="150" />
+    <Property Name="District" Type="varchar" MaxLength="150" />
+    <Property Name="Country" Type="varchar" MaxLength="150" />
+    <Property Name="flag" Type="int" />
+    <Property Name="cib_bb_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="I_INQUIRED">
+    <Key>
+      <PropertyRef Name="Inque_id" />
+    </Key>
+    <Property Name="Inque_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Trade_name" Type="varchar" MaxLength="150" />
+    <Property Name="Proprietorship_District" Type="varchar" MaxLength="150" />
+    <Property Name="Proprietorship_Address" Type="varchar" MaxLength="150" />
+    <Property Name="Owner_Name" Type="varchar" MaxLength="150" />
+    <Property Name="Father_name" Type="varchar" MaxLength="150" />
+    <Property Name="Mother_name" Type="varchar" MaxLength="150" />
+    <Property Name="DOB" Type="varchar" MaxLength="50" />
+    <Property Name="Proprietorship_Postalcode" Type="varchar" MaxLength="150" />
+    <Property Name="NID" Type="varchar" MaxLength="150" />
+    <Property Name="Owner_Address" Type="varchar" MaxLength="150" />
+    <Property Name="Postcode" Type="varchar" MaxLength="150" />
+    <Property Name="District" Type="varchar" MaxLength="150" />
+    <Property Name="TIN" Type="varchar" MaxLength="150" />
+    <Property Name="cib_bb_id" Type="int" />
+  </EntityType>
+  <EntityType Name="IMaster">
+    <Key>
+      <PropertyRef Name="cib_bb_id" />
+    </Key>
+    <Property Name="cib_bb_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CIB_subject_code" Type="varchar" MaxLength="50" />
+    <Property Name="Date_of_Inquiry" Type="datetime" />
+    <Property Name="User_ID" Type="varchar" MaxLength="50" />
+    <Property Name="FI_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Branch_Code" Type="varchar" MaxLength="50" />
+    <Property Name="FI_Name" Type="varchar" MaxLength="50" />
+    <Property Name="file_location" Type="varchar" MaxLength="150" />
+    <Property Name="Upload_date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="owner_list">
+    <Key>
+      <PropertyRef Name="ow_id" />
+    </Key>
+    <Property Name="ow_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cib_sub" Type="varchar" MaxLength="150" />
+    <Property Name="Name_owner" Type="varchar" MaxLength="150" />
+    <Property Name="Role" Type="varchar" MaxLength="150" />
+    <Property Name="stay_order" Type="varchar" MaxLength="150" />
+    <Property Name="cib_bb_id" Type="int" />
+  </EntityType>
+  <EntityType Name="PROP_CONCERN">
+    <Key>
+      <PropertyRef Name="linked_id" />
+    </Key>
+    <Property Name="linked_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CIb_sub_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Sector_type" Type="varchar" MaxLength="50" />
+    <Property Name="Sector_code" Type="varchar" MaxLength="50" />
+    <Property Name="Ref_number" Type="varchar" MaxLength="50" />
+    <Property Name="Trade_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Tele_number" Type="varchar" MaxLength="50" />
+    <Property Name="cib_bb_id" Type="int" />
+  </EntityType>
+  <EntityType Name="REQUESTED_CONTRACT">
+    <Key>
+      <PropertyRef Name="Req_id" />
+    </Key>
+    <Property Name="Req_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SL" Type="int" />
+    <Property Name="Type_of_Contract" Type="varchar" MaxLength="50" />
+    <Property Name="Facility" Type="varchar" MaxLength="50" />
+    <Property Name="Phase" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="FI_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Branch_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Request_date" Type="varchar" MaxLength="50" />
+    <Property Name="Total_Requested_Amount" Type="money" />
+    <Property Name="CIB_subject_code" Type="varchar" MaxLength="50" />
+    <Property Name="CIB_contract_code" Type="varchar" MaxLength="50" />
+    <Property Name="FI_0contract_codede" Type="varchar" MaxLength="50" />
+    <Property Name="cib_bb_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Sub_ INFO">
+    <Key>
+      <PropertyRef Name="Sub_id" />
+    </Key>
+    <Property Name="Sub_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CIB_subject_code" Type="varchar" MaxLength="50" />
+    <Property Name="Title_Name" Type="varchar" MaxLength="500" />
+    <Property Name="Fathername" Type="varchar" MaxLength="500" />
+    <Property Name="SpouseName" Type="varchar" MaxLength="500" />
+    <Property Name="Mothername" Type="varchar" MaxLength="500" />
+    <Property Name="Dob" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="500" />
+    <Property Name="District_Country" Type="varchar" MaxLength="500" />
+    <Property Name="NID" Type="varchar" MaxLength="500" />
+    <Property Name="TIN" Type="varchar" MaxLength="500" />
+    <Property Name="Type_of_sub" Type="varchar" MaxLength="500" />
+    <Property Name="Ref_number" Type="varchar" MaxLength="500" />
+    <Property Name="Sector_type" Type="varchar" MaxLength="500" />
+    <Property Name="ID_type" Type="varchar" MaxLength="500" />
+    <Property Name="ID_number" Type="varchar" MaxLength="500" />
+    <Property Name="ID_issue_date" Type="varchar" MaxLength="500" />
+    <Property Name="ID_issue_country" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="500" />
+    <Property Name="Remarks" Type="varchar" MaxLength="500" />
+    <Property Name="cib_bb_id" Type="int" />
+    <Property Name="trade_name" Type="varchar" MaxLength="500" />
+    <Property Name="sector_code" Type="varchar" MaxLength="500" />
+    <Property Name="legal_form" Type="varchar" MaxLength="500" />
+    <Property Name="reg_num" Type="varchar" MaxLength="500" />
+    <Property Name="reg_date" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SUM_OF_FACILITY_S_AS_BOR">
+    <Key>
+      <PropertyRef Name="Bor_id" />
+    </Key>
+    <Property Name="Bor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="No_of_reporting_Institutes" Type="int" />
+    <Property Name="No_of_Living_Contracts" Type="int" />
+    <Property Name="Total_Outstanding_Amount" Type="money" />
+    <Property Name="Total_Overdue_Amount" Type="money" />
+    <Property Name="No_of_Stay_order_contracts" Type="int" />
+    <Property Name="Total_Outstanding_amount_for_Stay" Type="money" />
+    <Property Name="cib_bb_id" Type="int" />
+    <Property Name="flag" Type="int" />
+  </EntityType>
+  <EntityType Name="SUM_OF_FUNDED_FACILI_AS_BOR">
+    <Key>
+      <PropertyRef Name="co_id" />
+    </Key>
+    <Property Name="co_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Contract_Category" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UC_NO" Type="int" />
+    <Property Name="SMA_NO" Type="int" />
+    <Property Name="SS_NO" Type="int" />
+    <Property Name="DF_NO" Type="int" />
+    <Property Name="B_NO" Type="int" />
+    <Property Name="BLW_NO" Type="int" />
+    <Property Name="Terminated_NO" Type="int" />
+    <Property Name="Requested_NO" Type="int" />
+    <Property Name="Stay_Order_NO" Type="int" />
+    <Property Name="UC_Amount" Type="money" />
+    <Property Name="SMA_Amount" Type="money" />
+    <Property Name="SS_Amount" Type="money" />
+    <Property Name="DF_Amount" Type="money" />
+    <Property Name="BL_Amount" Type="money" />
+    <Property Name="BLW_Amount" Type="money" />
+    <Property Name="Terminated_Amount" Type="money" />
+    <Property Name="Requested_Amount" Type="money" />
+    <Property Name="Stay_Order_Amount" Type="money" />
+    <Property Name="cib_bb_id" Type="int" Nullable="false" />
+    <Property Name="flag" Type="int" />
+  </EntityType>
+  <EntityType Name="SUM_OF_NON_FUNDED_FACILI_AS_BOR">
+    <Key>
+      <PropertyRef Name="Bor_id" />
+    </Key>
+    <Property Name="Bor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type_of_Financing" Type="varchar" MaxLength="50" />
+    <Property Name="Living_NO" Type="int" />
+    <Property Name="Terminated_NO" Type="int" />
+    <Property Name="Requested_NO" Type="int" />
+    <Property Name="Stay_Order_NO" Type="int" />
+    <Property Name="Living_Amount" Type="money" />
+    <Property Name="Terminated_Amount" Type="money" />
+    <Property Name="Requested_Amount" Type="money" />
+    <Property Name="Stay_Order_Amount" Type="money" />
+    <Property Name="cib_bb_id" Type="int" Nullable="false" />
+    <Property Name="flag" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_I_Sub_ INFO_I_Sub_ INFO">
+    <End Role="Sub_ INFO" Type="Self.Sub_ INFO" Multiplicity="1" />
+    <End Role="Sub_ INFO1" Type="Self.Sub_ INFO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Sub_ INFO">
+        <PropertyRef Name="Sub_id" />
+      </Principal>
+      <Dependent Role="Sub_ INFO1">
+        <PropertyRef Name="Sub_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CIBModelStoreContainer">
+    <EntitySet Name="Com_i" EntityType="Self.Com_i" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="D_Contract_History" EntityType="Self.D_Contract_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="d_Other_sub_linked" EntityType="Self.d_Other_sub_linked" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETAILS_OF_INSTALL_Faca" EntityType="Self.DETAILS_OF_INSTALL_Faca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Flags" EntityType="Self.Flags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="I_ADDRESS" EntityType="Self.I_ADDRESS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="I_INQUIRED" EntityType="Self.I_INQUIRED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMaster" EntityType="Self.IMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="owner_list" EntityType="Self.owner_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROP_CONCERN" EntityType="Self.PROP_CONCERN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REQUESTED_CONTRACT" EntityType="Self.REQUESTED_CONTRACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sub_ INFO" EntityType="Self.Sub_ INFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUM_OF_FACILITY_S_AS_BOR" EntityType="Self.SUM_OF_FACILITY_S_AS_BOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUM_OF_FUNDED_FACILI_AS_BOR" EntityType="Self.SUM_OF_FUNDED_FACILI_AS_BOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUM_OF_NON_FUNDED_FACILI_AS_BOR" EntityType="Self.SUM_OF_NON_FUNDED_FACILI_AS_BOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_I_Sub_ INFO_I_Sub_ INFO" Association="Self.FK_I_Sub_ INFO_I_Sub_ INFO">
+      <End Role="Sub_ INFO" EntitySet="Sub_ INFO" />
+      <End Role="Sub_ INFO1" EntitySet="Sub_ INFO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
